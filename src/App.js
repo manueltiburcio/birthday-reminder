@@ -5,18 +5,20 @@ import List from './List';
 function App() {
   const [people, setPeople] = useState(data);
 
-  console.log(people);
-
-  const handleClick = () => {
+  const handlerClear = () => {
     setPeople([]);
+  };
+  const handlerGet = () => {
+    setPeople(data);
   };
 
   return (
     <main>
       <section className="container">
-        <h3>{people.length} birthdays today</h3>
+        <h3>{people.length} Birthdays today</h3>
         <List people={people} />
-        <button onClick={handleClick}>Clear all</button>
+        <button onClick={handlerClear}>Clear all</button>
+        <button onClick={handlerGet}>Get all</button>
       </section>
     </main>
   );
